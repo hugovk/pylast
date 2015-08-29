@@ -1089,6 +1089,13 @@ class _Request(object):
                 name, url_quote_plus(_string(self.params[name])))))
         data = '&'.join(data)
 
+        if "api_sig" in self.params.keys():
+            method = "POST"
+            url_parameters = ""
+        else:
+            method = "GET"
+            url_parameters = "?" + data
+
         headers = {
             "Content-type": "application/x-www-form-urlencoded",
             'Accept-Charset': 'utf-8',
@@ -1104,8 +1111,8 @@ class _Request(object):
 
             try:
                 conn.request(
-                    method='POST', url="http://" + HOST_NAME + HOST_SUBDIR,
-                    body=data, headers=headers)
+                    url="http://" + HOST_NAME + HOST_SUBDIR + url_parameters,
+                    method=method, body=data, headers=headers)
             except Exception as e:
                 raise NetworkError(self.network, e)
 
@@ -1114,7 +1121,9 @@ class _Request(object):
 
             try:
                 conn.request(
-                    method='POST', url=HOST_SUBDIR, body=data, headers=headers)
+                    url=HOST_SUBDIR + url_parameters, body=data,
+                    method=method, headers=headers)
+#                     method='GET', url=HOST_SUBDIR + "?" + data)
             except Exception as e:
                 raise NetworkError(self.network, e)
 
