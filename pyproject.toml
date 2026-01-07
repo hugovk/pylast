@@ -50,6 +50,7 @@ optional-dependencies.tests = [
 ]
 urls.Changelog = "https://github.com/pylast/pylast/releases"
 urls.Homepage = "https://github.com/pylast/pylast"
+urls."Issue tracker" = "https://github.com/pylast/pylast/issues"
 urls.Source = "https://github.com/pylast/pylast"
 
 [tool.hatch]
@@ -95,6 +96,7 @@ lint.flake8-import-conventions.banned-from = [ "datetime" ]
 lint.flake8-pytest-style.parametrize-names-type = "csv"
 lint.isort.known-first-party = [ "pylast" ]
 lint.isort.required-imports = [ "from __future__ import annotations" ]
+lint.future-annotations = true
 
 [tool.pyproject-fmt]
 max_supported_python = "3.15"
