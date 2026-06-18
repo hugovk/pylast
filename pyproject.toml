@@ -46,7 +46,7 @@ optional-dependencies.tests = [
   "pytest-cov",
   "pytest-random-order",
   "pytest-recording",
-  "pyyaml",
+  "yamlrocks",
 ]
 urls.Changelog = "https://github.com/pylast/pylast/releases"
 urls.Homepage = "https://github.com/pylast/pylast"
