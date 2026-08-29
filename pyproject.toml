@@ -68,6 +68,7 @@ lint.extend-select = [
   "ICN",    # flake8-import-conventions
   "ISC",    # flake8-implicit-str-concat
   "LOG",    # flake8-logging
+  "PERF",   # perflint
   "PGH",    # pygrep-hooks
   "PT",     # flake8-pytest-style
   "PYI",    # flake8-pyi
