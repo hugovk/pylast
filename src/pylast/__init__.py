@@ -814,10 +814,11 @@ class _ShelfCacheBackend:
     """Used as a backend for caching cacheable requests."""
 
     def __init__(self, file_path=None, flag=None) -> None:
+        # The shelf stays open for the backend's lifetime
         if flag is not None:
-            self.shelf = shelve.open(file_path, flag=flag)
+            self.shelf = shelve.open(file_path, flag=flag)  # noqa: SIM115
         else:
-            self.shelf = shelve.open(file_path)
+            self.shelf = shelve.open(file_path)  # noqa: SIM115
         self.cache_keys = set(self.shelf.keys())
 
     def __contains__(self, key) -> bool:
