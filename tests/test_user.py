@@ -450,7 +450,7 @@ class TestPyLastUser(TestPyLastWithLastFm):
 
         # Act
         charts = user.get_weekly_artist_charts()
-        artist, weight = charts[0]
+        artist, _ = charts[0]
 
         # Assert
         assert artist is not None
@@ -462,7 +462,7 @@ class TestPyLastUser(TestPyLastWithLastFm):
 
         # Act
         charts = user.get_weekly_track_charts()
-        track, weight = charts[0]
+        track, _ = charts[0]
 
         # Assert
         assert track is not None
