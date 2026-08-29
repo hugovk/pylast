@@ -873,7 +873,7 @@ class _Request:
     def sign_it(self) -> None:
         """Sign this request."""
 
-        if "api_sig" not in self.params.keys():
+        if "api_sig" not in self.params:
             self.params["api_sig"] = self._get_signature()
 
     @staticmethod
@@ -1069,7 +1069,7 @@ class SessionKeyGenerator:
         Retrieves the session key/username of a web authorization process by its URL.
         """
 
-        if url in self.web_auth_tokens.keys():
+        if url in self.web_auth_tokens:
             token = self.web_auth_tokens[url]
 
         request = _Request(self.network, "auth.getSession", {"token": token})
@@ -2688,7 +2688,7 @@ class _Search(_BaseObject):
     def _get_params(self) -> dict:
         params = {}
 
-        for key in self.search_terms.keys():
+        for key in self.search_terms:
             params[key] = self.search_terms[key]
 
         return params
