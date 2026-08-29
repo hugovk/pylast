@@ -1560,7 +1560,7 @@ class _Opus(_Taggable):
 
         return (
             f"pylast.{self.ws_prefix.title()}"
-            f"({repr(self.artist.name)}, {repr(self.title)}, {repr(self.network)})"
+            f"({self.artist.name!r}, {self.title!r}, {self.network!r})"
         )
 
     def __str__(self) -> str:
@@ -1743,7 +1743,7 @@ class Artist(_Taggable):
         self.info = info
 
     def __repr__(self) -> str:
-        return f"pylast.Artist({repr(self.get_name())}, {repr(self.network)})"
+        return f"pylast.Artist({self.get_name()!r}, {self.network!r})"
 
     def __str__(self) -> str:
         return self.get_name()
@@ -1919,7 +1919,7 @@ class Country(_BaseObject):
         self.name = name
 
     def __repr__(self) -> str:
-        return f"pylast.Country({repr(self.name)}, {repr(self.network)})"
+        return f"pylast.Country({self.name!r}, {self.network!r})"
 
     def __str__(self) -> str:
         return self.get_name()
@@ -1999,7 +1999,7 @@ class Library(_BaseObject):
             self.user = User(user, self.network)
 
     def __repr__(self) -> str:
-        return f"pylast.Library({repr(self.user)}, {repr(self.network)})"
+        return f"pylast.Library({self.user!r}, {self.network!r})"
 
     def __str__(self) -> str:
         return repr(self.get_user()) + "'s Library"
@@ -2046,7 +2046,7 @@ class Tag(_Chartable):
         self.name = name
 
     def __repr__(self) -> str:
-        return f"pylast.Tag({repr(self.name)}, {repr(self.network)})"
+        return f"pylast.Tag({self.name!r}, {self.network!r})"
 
     def __str__(self) -> str:
         return self.get_name()
@@ -2246,7 +2246,7 @@ class User(_Chartable):
         self.name = user_name
 
     def __repr__(self) -> str:
-        return f"pylast.User({repr(self.name)}, {repr(self.network)})"
+        return f"pylast.User({self.name!r}, {self.network!r})"
 
     def __str__(self) -> str:
         return self.get_name()
