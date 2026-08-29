@@ -2865,7 +2865,7 @@ def _collect_nodes(
                 raise PyLastError(msg)
 
             for node in main.childNodes:
-                if not node.nodeType == Node.TEXT_NODE and (
+                if node.nodeType != Node.TEXT_NODE and (
                     not limit or (node_count < limit)
                 ):
                     node_count += 1
