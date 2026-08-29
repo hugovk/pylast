@@ -648,10 +648,7 @@ class _Network:
                     arg in tracks_to_scrobble[i]
                     and tracks_to_scrobble[i][arg] is not None
                 ):
-                    if arg in args_map_to:
-                        maps_to = args_map_to[arg]
-                    else:
-                        maps_to = arg
+                    maps_to = args_map_to.get(arg, arg)
 
                     params[f"{maps_to}[{i}]"] = tracks_to_scrobble[i][arg]
 
