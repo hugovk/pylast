@@ -60,19 +60,20 @@ build.hooks.vcs.version-file = "src/pylast/_version.py"
 [tool.ruff]
 fix = true
 lint.extend-select = [
-  "C4",  # flake8-comprehensions
-  "E",   # pycodestyle errors
-  "EM",  # flake8-errmsg
-  "F",   # pyflakes
-  "I",   # isort
-  "ICN", # flake8-import-conventions
-  "ISC", # flake8-implicit-str-concat
-  "LOG", # flake8-logging
-  "PGH", # pygrep-hooks
-  "PT",  # flake8-pytest-style
-  "PYI", # flake8-pyi
-  "UP",  # pyupgrade
-  "W",   # pycodestyle warnings
+  "C4",     # flake8-comprehensions
+  "E",      # pycodestyle errors
+  "EM",     # flake8-errmsg
+  "F",      # pyflakes
+  "I",      # isort
+  "ICN",    # flake8-import-conventions
+  "ISC",    # flake8-implicit-str-concat
+  "LOG",    # flake8-logging
+  "PGH",    # pygrep-hooks
+  "PT",     # flake8-pytest-style
+  "PYI",    # flake8-pyi
+  "TID251", # flake8-tidy-imports: banned-api
+  "UP",     # pyupgrade
+  "W",      # pycodestyle warnings
 ]
 lint.ignore = [
   "E203",   # Whitespace before ':'
